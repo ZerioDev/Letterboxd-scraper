@@ -1,0 +1,25 @@
+{
+  "name": "letterboxd-scraper",
+  "version": "1.0.0",
+  "description": "A scraper for the Letterboxd website",
+  "main": "index.js",
+  "author": "ZerioDev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZerioDev/Letterboxd-scraper"
+  },
+  "bugs": {
+    "url": "https://github.com/ZerioDev/Letterboxd-scraper/issues"
+  },
+  "homepage": "https://github.com/ZerioDev/Letterboxd-scraper#readme",
+  "keywords": [
+    "letterboxd",
+    "scraper",
+    "movies"
+  ],
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cheerio": "^1.0.0-rc.12"
+  }
+}
