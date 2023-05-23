@@ -22,7 +22,7 @@ scraper.searchMovie('The Basketball')
     .catch((error) => console.log(error));
 ```
 
-Response in [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) format :
+Response :
 
 ```
 [
@@ -66,7 +66,7 @@ scraper.getMovie('https://letterboxd.com/film/the-basketball-diaries')
     .catch((error) => console.log(error));
 ```
 
-Response in [JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) format :
+Response :
 
 ```
 {
@@ -90,7 +90,7 @@ scraper.getProfile('juulienn')
     .catch((error) => console.log(error));
 ```
 
-Response in [JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) format :
+Response :
 
 ```
 {
