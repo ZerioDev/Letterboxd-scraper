@@ -8,6 +8,7 @@ module.exports = async ($, baseURL) => {
     page.results.map(x => {
         users.push({
             name: x.find('div').find('h3').find('a').text().trim(),
+            url: `${baseURL}${x.find('div').find('a').attr('href')}`,
             followers: Number(x.find('div').find('small').find('a:nth-child(1)').text().trim().replace(/[^0-9]/g, '')),
             following: Number(x.find('div').find('small').find('a:nth-child(2)').text().trim().replace(/[^0-9]/g, '')),
             image: {
