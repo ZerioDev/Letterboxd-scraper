@@ -36,13 +36,18 @@ class Scraper {
         return methods.searchUser($, baseURL);
     }
 
-    static async getMovie(URL) {
-        if (!URL || typeof URL !== 'string') throw new Error('You must include the "URL" element of type "string".');
+    static async getMovie(query) {
+        if (!query || typeof query !== 'string') throw new Error('You must include the "query" element of type "string".');
 
+        let url;
         const reg = new RegExp((/https?:\/\/letterboxd\.com\/film\/([a-z\d-]+)/g));
-        if (!URL.match(reg)) throw new Error('The URL is not valid it should start with "https://letterboxd.com/film/".');
 
-        const html = await this.getHtml(`${encodeURI(URL.trim())}`);
+        if (query.match(reg)) url = query;
+        else await this.searchMovie(query).then((items) => url = items[0]?.url).catch((error) => console.log(error));
+
+        if (!url) return Object();
+
+        const html = await this.getHtml(`${encodeURI(url.trim())}`);
         const $ = await cheerio.load(html);
 
         return methods.getMovie($);
