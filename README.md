@@ -12,6 +12,8 @@ Any bug issue should be reported. Any suggestions for improvement or new feature
 
 ### 🧩 An easy to use module
 
+Some examples with all features are available on [GitHub](https://github.com/ZerioDev/Letterboxd-scraper/tree/main/test).
+
 Search for a movie :
 
 ```js
@@ -61,7 +63,13 @@ Get a movie :
 ```js
 const scraper = require('letterboxd-scraper');
 
+//With URL
 scraper.getMovie('https://letterboxd.com/film/the-basketball-diaries')
+    .then((items) => console.log(items))
+    .catch((error) => console.log(error));
+
+// With name
+scraper.getMovie('The Basketball Diaries')
     .then((items) => console.log(items))
     .catch((error) => console.log(error));
 ```
@@ -78,6 +86,34 @@ Response :
     summary: "Film adaptation of street tough Jim Carroll's epistle about his kaleidoscopic free fall into the harrowing world of drug addiction."
   }
 }
+```
+
+Search a user :
+
+```js
+const scraper = require('letterboxd-scraper');
+
+scraper.searchUser('looneylz')
+    .then((items) => console.log(items))
+    .catch((error) => console.log(error));
+```
+
+Response :
+
+```
+[
+  {
+    name: 'Romeo',
+    url: 'https://letterboxd.com/looneylz/',
+    followers: 1,
+    following: 1,
+    image: {
+      url: 'https://a.ltrbxd.com/resized/avatar/upload/9/5/9/4/5/0/7/shard/avtr-0-80-0-80-crop.jpg?v=81837288f4',
+      width: '40',
+      height: '40'
+    }
+  }
+]
 ```
 
 Get a profile :
