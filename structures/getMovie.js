@@ -5,7 +5,7 @@ module.exports = async ($) => {
     page.header = $('.header');
     page.results = page.header.find('#profile-statistic').toArray().map(element => $(element));
 
-    return ({
+    return Object({
         name: page.col.find('h1').text().trim(),
         date: page.col.find('small').text() ? Number(page.col.find('small').text().trim()) : null,
         trailer: `https://${page.header.find('a').attr('href').substr(2)}`,

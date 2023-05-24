@@ -7,7 +7,7 @@ module.exports = async ($, baseURL) => {
     const stats = [];
     page.data.map(x => stats.push(x.find('.value').text()));
 
-    return ({
+    return Object({
         rss: `${baseURL}/${page.header.find('.title-1').text()}/rss`,
         name: page.header.find('.title-1').text(),
         biography: page.header.find('.bio').text() ? page.header.find('.bio').text().trim() : null,

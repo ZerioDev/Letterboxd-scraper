@@ -1,6 +1,6 @@
 module.exports = async ($, baseURL) => {
     const page = {};
-    const movies = [];
+    const movies = Array();
 
     page.header = $('.results');
     page.results = page.header.find('li').toArray().map(element => $(element));
