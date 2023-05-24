@@ -4,6 +4,8 @@ const cheerio = require('cheerio');
 const methods = {};
 methods.searchMovie = require('./structures/searchMovie');
 methods.searchUser = require('./structures/searchUser');
+methods.searchPodcast = require('./structures/searchPodcast');
+
 methods.getMovie = require('./structures/getMovie');
 methods.getProfile = require('./structures/getProfile');
 
@@ -34,6 +36,15 @@ class Scraper {
         const $ = await cheerio.load(html);
 
         return methods.searchUser($, baseURL);
+    }
+
+    static async searchPodcast(query) {
+        if (!query || typeof query !== 'string') throw new Error('You must include the "query" element of type "string".');
+
+        const html = await this.getHtml(`${baseURL}/search/episodes/${encodeURI(query.trim())}`);
+        const $ = await cheerio.load(html);
+
+        return methods.searchPodcast($);
     }
 
     static async getMovie(query) {
