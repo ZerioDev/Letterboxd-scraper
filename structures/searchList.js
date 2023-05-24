@@ -9,8 +9,9 @@ module.exports = async ($, baseURL) => {
         if (!x.find('h2').find('a').text()) return;
 
         lists.push({
-            name: x.find('h2').find('a').text().trim(),
+            id: Number(x.find('section').attr('data-film-list-id')),
             url: `${baseURL}${x.find('a').attr('href')}`,
+            name: x.find('h2').find('a').text().trim(),
             author: {
                 name: x.find('p').find('a').eq(0).text().trim(),
                 url: `${baseURL}${x.find('p').find('a').attr('href')}`,

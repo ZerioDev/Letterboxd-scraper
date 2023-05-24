@@ -14,7 +14,7 @@ module.exports = async ($, baseURL) => {
             id: Number(x.find('div').attr('data-film-id')),
             url: `${baseURL}${x.find('div').attr('data-film-slug')}`,
             name: x.find('img').attr('alt').trim(),
-            date: x.find('a').eq(1).text() ? Number(x.find('a').eq(1).text().trim()) : null,
+            date: x.find('a').eq(1).text() ? x.find('a').eq(1).text().trim() : null,
             text: x.find('div > div').text() ? x.find('div > div').text().trim() : null,
             directed: producers,
             image: {

@@ -44,7 +44,7 @@ Response :
     id: 163198,
     url: 'https://letterboxd.com/film/the-land-of-basketball-1995-2005/',
     name: 'The Land of Basketball 1995-2005',
-    date: 2008,
+    date: '2008',
     text: 'Original title: Zemlja košarke 1995-2005  Alternative title: Zemlja kosarke',
     directed: [],
     image: { width: '70', height: '105' }
@@ -53,7 +53,7 @@ Response :
     id: 557093,
     url: 'https://letterboxd.com/film/basketball-water-and-the-lost-city-of-elbowoods/',
     name: 'Basketball, Water and the Lost City of Elbowoods',
-    date: 2019,
+    date: '2019',
     text: null,
     directed: [],
     image: { width: '70', height: '105' }
@@ -62,7 +62,7 @@ Response :
     id: 706715,
     url: 'https://letterboxd.com/film/something-in-the-water-a-kinston-basketball-story/',
     name: 'Something In The Water: A Kinston Basketball Story',
-    date: 2020,
+    date: '2020',
     text: null,
     directed: [ 'Marcus Mizelle' ],
     image: { width: '70', height: '105' }
@@ -91,7 +91,7 @@ Response :
 ```
 {
   name: 'The Basketball Diaries',
-  date: 1995,
+  date: '1995',
   trailer: 'https://www.youtube.com/embed/W5eVnwe6Pxs?rel=0&wmode=transparent',
   description: {
     synopsis: 'The true story of the death of innocence and the birth of an artist.',

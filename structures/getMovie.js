@@ -7,7 +7,7 @@ module.exports = async ($) => {
 
     return Object({
         name: page.col.find('h1').text().trim(),
-        date: page.col.find('small').text() ? Number(page.col.find('small').text().trim()) : null,
+        date: page.col.find('small').text() ? page.col.find('small').text().trim() : null,
         trailer: `https://${page.header.find('a').attr('href').substr(2)}`,
         description: {
             synopsis: page.col.find('h4').text() ? page.col.find('h4').text().trim() : null,

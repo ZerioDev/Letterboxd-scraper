@@ -7,8 +7,8 @@ module.exports = async ($) => {
 
     page.results.map(x => {
         podcasts.push({
-            title: x.find('h3').find('a').text().trim(),
             url: `${x.find('a').attr('href')}`,
+            title: x.find('h3').find('a').text().trim(),
             image: {
                 url: x.find('img').attr('src'),
                 width: x.find('img').attr('width'),
