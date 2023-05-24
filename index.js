@@ -56,10 +56,11 @@ class Scraper {
     static async getProfile(username) {
         if (!username || typeof username !== 'string') throw new Error('You must include the "username" element of type "string".');
 
-        const html = await this.getHtml(`${baseURL}/${encodeURI(username.trim())}`);
+        const user = username.trim();
+        const html = await this.getHtml(`${baseURL}/${encodeURI(user)}`);
         const $ = await cheerio.load(html);
 
-        return methods.getProfile($, baseURL);
+        return methods.getProfile($, baseURL, user);
     }
 }
 

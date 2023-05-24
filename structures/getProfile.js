@@ -1,4 +1,4 @@
-module.exports = async ($, baseURL) => {
+module.exports = async ($, baseURL, user) => {
     const page = {};
 
     page.header = $('#profile-header');
@@ -8,7 +8,8 @@ module.exports = async ($, baseURL) => {
     page.data.map(x => stats.push(x.find('.value').text()));
 
     return Object({
-        rss: `${baseURL}/${page.header.find('.title-1').text()}/rss`,
+        rss: `${baseURL}/${user}/rss`,
+        url: `${baseURL}/${user}`,
         name: page.header.find('.title-1').text(),
         biography: page.header.find('.bio').text() ? page.header.find('.bio').text().trim() : null,
         avatarURL: page.header.find('.profile-avatar').find('img').attr('src'),
