@@ -20,6 +20,7 @@ Some examples with all features are available on [GitHub](https://github.com/Zer
 | searchMovie | Name of a movie | Search a movie |
 | searchUser | Name of a Letterboxd user | Search a Letterboxd user |
 | searchPodcast | Name of a podcast | Find a podcast |
+| searchList | Name of a Letterboxd list | Find a Letterboxd list |
 | getMovie | Name of a movie / Letterboxd movie URL | More information on a movie |
 | getProfile | Name of a Letterboxd user | More information on a Letterboxd user |
 
